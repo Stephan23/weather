@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg
+   version="1.1"
+   id="Layer_1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 512 512"
+   style="enable-background:new 0 0 512 512;"
+   xml:space="preserve"
+   sodipodi:docname="02d.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs65"><filter
+     style="color-interpolation-filters:sRGB;"
+     inkscape:label="Invert"
+     id="filter886"><feColorMatrix
+       type="hueRotate"
+       values="180"
+       result="color1"
+       id="feColorMatrix882" /><feColorMatrix
+       values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 -0.21 -0.72 -0.07 2 0 "
+       result="color2"
+       id="feColorMatrix884" /></filter><filter
+     style="color-interpolation-filters:sRGB;"
+     inkscape:label="Invert"
+     id="filter892"><feColorMatrix
+       type="hueRotate"
+       values="180"
+       result="color1"
+       id="feColorMatrix888" /><feColorMatrix
+       values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 -0.21 -0.72 -0.07 2 0 "
+       result="color2"
+       id="feColorMatrix890" /></filter><filter
+     style="color-interpolation-filters:sRGB;"
+     inkscape:label="Invert"
+     id="filter898"><feColorMatrix
+       type="hueRotate"
+       values="180"
+       result="color1"
+       id="feColorMatrix894" /><feColorMatrix
+       values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 -0.21 -0.72 -0.07 2 0 "
+       result="color2"
+       id="feColorMatrix896" /></filter><filter
+     style="color-interpolation-filters:sRGB;"
+     inkscape:label="Invert"
+     id="filter904"><feColorMatrix
+       type="hueRotate"
+       values="180"
+       result="color1"
+       id="feColorMatrix900" /><feColorMatrix
+       values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 -0.21 -0.72 -0.07 2 0 "
+       result="color2"
+       id="feColorMatrix902" /></filter><filter
+     style="color-interpolation-filters:sRGB;"
+     inkscape:label="Invert"
+     id="filter910"><feColorMatrix
+       type="hueRotate"
+       values="180"
+       result="color1"
+       id="feColorMatrix906" /><feColorMatrix
+       values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 -0.21 -0.72 -0.07 2 0 "
+       result="color2"
+       id="feColorMatrix908" /></filter><filter
+     style="color-interpolation-filters:sRGB;"
+     inkscape:label="Invert"
+     id="filter916"><feColorMatrix
+       type="hueRotate"
+       values="180"
+       result="color1"
+       id="feColorMatrix912" /><feColorMatrix
+       values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 -0.21 -0.72 -0.07 2 0 "
+       result="color2"
+       id="feColorMatrix914" /></filter><filter
+     style="color-interpolation-filters:sRGB;"
+     inkscape:label="Invert"
+     id="filter922"><feColorMatrix
+       type="hueRotate"
+       values="180"
+       result="color1"
+       id="feColorMatrix918" /><feColorMatrix
+       values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 -0.21 -0.72 -0.07 2 0 "
+       result="color2"
+       id="feColorMatrix920" /></filter><filter
+     style="color-interpolation-filters:sRGB;"
+     inkscape:label="Invert"
+     id="filter928"><feColorMatrix
+       type="hueRotate"
+       values="180"
+       result="color1"
+       id="feColorMatrix924" /><feColorMatrix
+       values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 -0.21 -0.72 -0.07 2 0 "
+       result="color2"
+       id="feColorMatrix926" /></filter><filter
+     style="color-interpolation-filters:sRGB;"
+     inkscape:label="Invert"
+     id="filter934"><feColorMatrix
+       type="hueRotate"
+       values="180"
+       result="color1"
+       id="feColorMatrix930" /><feColorMatrix
+       values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 -0.21 -0.72 -0.07 2 0 "
+       result="color2"
+       id="feColorMatrix932" /></filter><filter
+     style="color-interpolation-filters:sRGB;"
+     inkscape:label="Invert"
+     id="filter940"><feColorMatrix
+       type="hueRotate"
+       values="180"
+       result="color1"
+       id="feColorMatrix936" /><feColorMatrix
+       values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 -0.21 -0.72 -0.07 2 0 "
+       result="color2"
+       id="feColorMatrix938" /></filter><filter
+     style="color-interpolation-filters:sRGB;"
+     inkscape:label="Invert"
+     id="filter946"><feColorMatrix
+       type="hueRotate"
+       values="180"
+       result="color1"
+       id="feColorMatrix942" /><feColorMatrix
+       values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 -0.21 -0.72 -0.07 2 0 "
+       result="color2"
+       id="feColorMatrix944" /></filter><filter
+     style="color-interpolation-filters:sRGB;"
+     inkscape:label="Invert"
+     id="filter952"><feColorMatrix
+       type="hueRotate"
+       values="180"
+       result="color1"
+       id="feColorMatrix948" /><feColorMatrix
+       values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 -0.21 -0.72 -0.07 2 0 "
+       result="color2"
+       id="feColorMatrix950" /></filter><filter
+     style="color-interpolation-filters:sRGB;"
+     inkscape:label="Invert"
+     id="filter958"><feColorMatrix
+       type="hueRotate"
+       values="180"
+       result="color1"
+       id="feColorMatrix954" /><feColorMatrix
+       values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 -0.21 -0.72 -0.07 2 0 "
+       result="color2"
+       id="feColorMatrix956" /></filter><filter
+     style="color-interpolation-filters:sRGB;"
+     inkscape:label="Invert"
+     id="filter964"><feColorMatrix
+       type="hueRotate"
+       values="180"
+       result="color1"
+       id="feColorMatrix960" /><feColorMatrix
+       values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 -0.21 -0.72 -0.07 2 0 "
+       result="color2"
+       id="feColorMatrix962" /></filter><filter
+     style="color-interpolation-filters:sRGB;"
+     inkscape:label="Invert"
+     id="filter970"><feColorMatrix
+       type="hueRotate"
+       values="180"
+       result="color1"
+       id="feColorMatrix966" /><feColorMatrix
+       values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 -0.21 -0.72 -0.07 2 0 "
+       result="color2"
+       id="feColorMatrix968" /></filter><filter
+     style="color-interpolation-filters:sRGB;"
+     inkscape:label="Invert"
+     id="filter976"
+     x="0"
+     y="0"
+     width="1"
+     height="1"><feColorMatrix
+       type="hueRotate"
+       values="180"
+       result="color1"
+       id="feColorMatrix972" /><feColorMatrix
+       values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 -0.21 -0.72 -0.07 2 0 "
+       result="color2"
+       id="feColorMatrix974" /></filter><filter
+     style="color-interpolation-filters:sRGB;"
+     inkscape:label="Invert"
+     id="filter982"
+     x="0"
+     y="0"
+     width="1"
+     height="1"><feColorMatrix
+       type="hueRotate"
+       values="180"
+       result="color1"
+       id="feColorMatrix978" /><feColorMatrix
+       values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 -0.21 -0.72 -0.07 2 0 "
+       result="color2"
+       id="feColorMatrix980" /></filter><filter
+     style="color-interpolation-filters:sRGB;"
+     inkscape:label="Invert"
+     id="filter988"
+     x="0"
+     y="0"
+     width="1"
+     height="1"><feColorMatrix
+       type="hueRotate"
+       values="180"
+       result="color1"
+       id="feColorMatrix984" /><feColorMatrix
+       values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 -0.21 -0.72 -0.07 2 0 "
+       result="color2"
+       id="feColorMatrix986" /></filter><filter
+     style="color-interpolation-filters:sRGB;"
+     inkscape:label="Invert"
+     id="filter994"
+     x="0"
+     y="0"
+     width="1"
+     height="1"><feColorMatrix
+       type="hueRotate"
+       values="180"
+       result="color1"
+       id="feColorMatrix990" /><feColorMatrix
+       values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 -0.21 -0.72 -0.07 2 0 "
+       result="color2"
+       id="feColorMatrix992" /></filter><filter
+     style="color-interpolation-filters:sRGB;"
+     inkscape:label="Invert"
+     id="filter1000"
+     x="0"
+     y="0"
+     width="1"
+     height="1"><feColorMatrix
+       type="hueRotate"
+       values="180"
+       result="color1"
+       id="feColorMatrix996" /><feColorMatrix
+       values="-1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 1 -0.21 -0.72 -0.07 2 0 "
+       result="color2"
+       id="feColorMatrix998" /></filter></defs><sodipodi:namedview
+   id="namedview63"
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1.0"
+   inkscape:pageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   showgrid="false"
+   inkscape:zoom="1.5585938"
+   inkscape:cx="256"
+   inkscape:cy="256.3208"
+   inkscape:window-width="1920"
+   inkscape:window-height="991"
+   inkscape:window-x="-9"
+   inkscape:window-y="-9"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="Layer_1" />
+<g
+   id="g6"
+   style="filter:url(#filter1000)">
+	<g
+   id="g4">
+		<path
+   d="M326.4,44.8c-10.605,0-19.2,8.596-19.2,19.2v12.8c0,10.604,8.595,19.2,19.2,19.2c10.602,0,19.2-8.596,19.2-19.2V64    C345.6,53.396,337.002,44.8,326.4,44.8z"
+   id="path2" />
+	</g>
+</g>
+<g
+   id="g12"
+   style="filter:url(#filter994)">
+	<g
+   id="g10">
+		<path
+   d="M422.4,230.4c0-52.934-43.066-96-96-96c-20.945,0-40.852,6.629-57.571,19.172c-10.115,7.589-18.657,17.195-25.083,28.035    c-14.103-5.665-29.432-8.755-45.348-8.755c-65.188,0-118.56,51.56-121.472,116.042C33.499,295.066,0,332.494,0,377.6    c0,49.407,40.195,89.6,89.6,89.6h224c59.992,0,108.8-48.808,108.8-108.8c0-24.882-8.415-47.823-22.523-66.173    C414.363,275.103,422.4,253.435,422.4,230.4z M313.6,428.8h-224c-28.23,0-51.2-22.968-51.2-51.2s22.97-51.2,51.2-51.2H96    c10.605,0,19.2-8.596,19.2-19.2v-12.749c0-45.878,37.325-83.2,83.2-83.2c37.97,0,71.1,25.637,80.567,62.344    c2.188,8.48,9.836,14.405,18.592,14.405H313.6c38.82,0,70.4,31.581,70.4,70.4C384,397.219,352.42,428.8,313.6,428.8z     M371.443,266.316C354.673,255.744,334.848,249.6,313.6,249.6h-2.132c-7.541-19.06-19.654-35.523-34.843-48.269    c10.13-17.464,28.82-28.531,49.775-28.531c31.761,0,57.6,25.838,57.6,57.6C384,243.697,379.525,256.23,371.443,266.316z"
+   id="path8" />
+	</g>
+</g>
+<g
+   id="g18"
+   style="filter:url(#filter988)">
+	<g
+   id="g16">
+		<path
+   d="M492.8,211.2H480c-10.605,0-19.2,8.596-19.2,19.2s8.595,19.2,19.2,19.2h12.8c10.602,0,19.2-8.596,19.2-19.2    S503.402,211.2,492.8,211.2z"
+   id="path14" />
+	</g>
+</g>
+<g
+   id="g24"
+   style="filter:url(#filter982)">
+	<g
+   id="g22">
+		<path
+   d="M457.637,99.159c-7.497-7.496-19.654-7.496-27.153,0.003l-9.05,9.051c-7.497,7.498-7.497,19.656,0.003,27.154    c3.748,3.748,8.66,5.623,13.574,5.623c4.913,0,9.828-1.875,13.577-5.626l9.05-9.051    C465.138,118.813,465.138,106.656,457.637,99.159z"
+   id="path20" />
+	</g>
+</g>
+<g
+   id="g30"
+   style="filter:url(#filter976)">
+	<g
+   id="g28">
+		<path
+   d="M231.364,108.211l-9.05-9.05c-7.5-7.497-19.654-7.498-27.155,0c-7.497,7.497-7.497,19.653,0,27.153l9.051,9.05    c3.75,3.75,8.663,5.626,13.577,5.626c4.913,0,9.828-1.875,13.574-5.624C238.861,127.868,238.861,115.712,231.364,108.211z"
+   id="path26" />
+	</g>
+</g>
+<g
+   id="g32"
+   style="filter:url(#filter970)">
+</g>
+<g
+   id="g34"
+   style="filter:url(#filter964)">
+</g>
+<g
+   id="g36"
+   style="filter:url(#filter958)">
+</g>
+<g
+   id="g38"
+   style="filter:url(#filter952)">
+</g>
+<g
+   id="g40"
+   style="filter:url(#filter946)">
+</g>
+<g
+   id="g42"
+   style="filter:url(#filter940)">
+</g>
+<g
+   id="g44"
+   style="filter:url(#filter934)">
+</g>
+<g
+   id="g46"
+   style="filter:url(#filter928)">
+</g>
+<g
+   id="g48"
+   style="filter:url(#filter922)">
+</g>
+<g
+   id="g50"
+   style="filter:url(#filter916)">
+</g>
+<g
+   id="g52"
+   style="filter:url(#filter910)">
+</g>
+<g
+   id="g54"
+   style="filter:url(#filter904)">
+</g>
+<g
+   id="g56"
+   style="filter:url(#filter898)">
+</g>
+<g
+   id="g58"
+   style="filter:url(#filter892)">
+</g>
+<g
+   id="g60"
+   style="filter:url(#filter886)">
+</g>
+</svg>

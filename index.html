@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>SmartMirror Weather Dashboard</title>
+    <style>
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            background: #000;
+            color: #fff;
+            font-family: Inter, Segoe UI, Arial, sans-serif
+        }
+
+        .wrap {
+            padding: 40px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column
+        }
+
+        .top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start
+        }
+
+        #clock {
+            font-size: 56px;
+            font-weight: 600
+        }
+
+        #date_ {
+            font-size: 32px;
+            color: #bbb
+        }
+
+        #city {
+            font-size: 32px;
+            color: #bbb
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex: 1
+        }
+
+        #icon {
+            font-size: 150px
+        }
+
+        #temp {
+            font-size: 170px;
+            font-weight: 700;
+            line-height: .9
+        }
+
+        #stat_ {
+            font-size: 38px;
+            color: #cfcfcf
+        }
+
+        .info {
+            display: flex;
+            gap: 18px;
+            margin-top: 25px
+        }
+
+        .box {
+            border: 1px solid #222;
+            border-radius: 16px;
+            padding: 14px 22px;
+            color: #ddd
+        }
+
+        .forecast {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 14px
+        }
+
+        .day {
+            border: 1px solid #222;
+            border-radius: 16px;
+            padding: 16px;
+            text-align: center
+        }
+
+        .wi {
+            font-size: 48px
+        }
+
+        .small {
+            color: #aaa
+        }
+        .hourly{
+            border:1px solid #222;
+            border-radius:16px;
+            display:grid;
+            /* gap:5px; */
+            margin:20px 0 35px;
+        }
+
+        .hour{
+            /* border:1px solid #222; */
+            border-radius:16px;
+            padding:14px;
+            text-align:center;
+        }
+
+        .hour img{
+            height:54px;
+            margin:8px 0;
+        }
+
+        .forcast_time{
+            font-size:22px;
+            color:#bbb;
+        }
+
+        .forcast_temp{
+            font-size:22px;
+            font-weight:600;
+        }
+
+        .forcast_rain{
+            color:#8ec8ff;
+            font-size:18px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class=wrap>
+        <div class=top>
+            <div id=clock></div>
+            <div id=date_></div>
+            <div id=city></div>
+        </div>
+        <div class=hero>
+            <img id=icon src="svg/01d.svg" type="image/svg+xml"  height="400"/>
+            <!-- <div id=icon>☀️</div> -->
+            <div>
+                <div id=temp>--°</div>
+                <div id=stat_>...</div>
+                <div class=info>
+                    <div class=box>
+                        <img src="svg/luftfeuchtigkeit.svg" type="image/svg+xml"  height="30"/>
+                        <div id=hum></div>
+                    </div>
+                    <div class=box>
+                        <img src="svg/wind.svg" type="image/svg+xml"  height="30"/>
+                        <div id=wind></div>
+                    </div>
+                    <div class=box>
+                        <img src="svg/09d.svg" type="image/svg+xml"  height="30"/>
+                        <div id=rain class="forcast_rain"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="hourly" class="hourly"></div>
+        <div class="forecast" id="fc"></div>
+    </div>
+    <script>
+        const q = new URLSearchParams(location.search);
+        const lat = q.get('lat') || 51.06, lon = q.get('lon') || 6.10, city = q.get('city') || 'Heinsberg';
+        const dt = parseInt(q.get('dt') || 3);
+        const dtCount = parseInt(q.get('dt_count') || 8);
+        cityEl = document.getElementById('city'); cityEl.textContent = city;
+        const map = { 1: {
+            0: ["01", "Sonnig"],
+            1: ["02", "Überwiegend sonnig"],
+            2: ["02", "Teilweise bewölkt"],
+            3: ["03", "Bewölkt"],
+            45: ["50", "Nebel"],
+            48: ["50", "Reifnebel"],
+            51: ["10", "Niesel"],
+            53: ["10", "Niesel"],
+            55: ["09", "Starker Niesel"],
+            61: ["10", "Leichter Regen"],
+            63: ["09", "Regen"],
+            65: ["09", "Starker Regen"],
+            66: ["09", "Gefrierender Regen"],
+            67: ["09", "Starker gefrierender Regen"],
+            71: ["13", "Leichter Schnee"],
+            73: ["13", "Schnee"],
+            75: ["13", "Starker Schnee"],
+            77: ["13", "Schneegriesel"],
+            80: ["10", "Schauer"],
+            81: ["09", "Regenschauer"],
+            82: ["11", "Starke Schauer"],
+            85: ["13", "Schneeschauer"],
+            86: ["13", "Starke Schneeschauer"],
+            95: ["11", "Gewitter"],
+            96: ["11", "Gewitter+Hagel"],
+            99: ["11", "Schweres Gewitter"]},
+        0: {
+            0: ["01", "Klar"],
+            1: ["02", "Überwiegend klar"],
+            2: ["02", "Teilweise bewölkt"],
+            3: ["03", "Bewölkt"],
+            45: ["50", "Nebel"],
+            48: ["50", "Reifnebel"],
+            51: ["10", "Niesel"],
+            53: ["10", "Niesel"],
+            55: ["09", "Starker Niesel"],
+            61: ["10", "Leichter Regen"],
+            63: ["09", "Regen"],
+            65: ["09", "Starker Regen"],
+            66: ["09", "Gefrierender Regen"],
+            67: ["09", "Starker gefrierender Regen"],
+            71: ["13", "Leichter Schnee"],
+            73: ["13", "Schnee"],
+            75: ["13", "Starker Schnee"],
+            77: ["13", "Schneegriesel"],
+            80: ["10", "Schauer"],
+            81: ["09", "Regenschauer"],
+            82: ["11", "Starke Schauer"],
+            85: ["13", "Schneeschauer"],
+            86: ["13", "Starke Schneeschauer"],
+            95: ["11", "Gewitter"],
+            96: ["11", "Gewitter+Hagel"],
+            99: ["11", "Schweres Gewitter"]} };
+        function ico(r, c) { return map[r][c] || ["01", "Unbekannt"] }
+        function tick() { 
+            date_.textContent = new Date().toLocaleDateString('de-DE', { weekday: "long",
+  year: "numeric",
+  month: "long",
+  day: "numeric", });
+            clock.textContent = new Date().toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' }); 
+        }
+        setInterval(tick, 1000); tick();
+        async function load() {
+            let url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,weather_code,wind_speed_10m,relative_humidity_2m,is_day&hourly=temperature_2m,weather_code,precipitation_probability,is_day&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&forecast_hours=${dt*dtCount}&timezone=auto`.replace(/\s+/g,'');
+            let j = await (await fetch(url)).json();
+            let d = ico(j.current.is_day, j.current.weather_code);
+            let p = `svg/${d[0]}${j.current.is_day == 1 ? 'd' : 'n'}.svg`
+            icon.src = p;
+            stat_.textContent = d[1];
+            temp.textContent = Math.round(j.current.temperature_2m) + "°";
+            hum.innerHTML = j.current.relative_humidity_2m + " %";
+            wind.innerHTML = Math.round(j.current.wind_speed_10m) + " km/h";
+            rain.innerHTML = j.daily.precipitation_probability_max[0] + " %";
+            fc.innerHTML = "";
+
+            hourly.style.gridTemplateColumns=`repeat(${dtCount},1fr)`;
+
+            hourly.innerHTML="";
+
+            for(let i=0;i<dtCount;i++){
+
+                let idx=i*dt;
+
+                let x=ico(
+                    j.hourly.is_day[idx],
+                    j.hourly.weather_code[idx]
+                );
+
+                let time=new Date(j.hourly.time[idx]);
+
+                let hh=time.toLocaleTimeString("de-DE",{
+                    hour:"2-digit",
+                    minute:"2-digit"
+                });
+
+                hourly.innerHTML+=`
+                <div class="hour">
+
+                    <div class="forcast_time">${hh}</div>
+
+                    <img
+                        src="svg/${x[0]}${j.hourly.is_day[idx]?'d':'n'}.svg"
+                        height="48">
+
+                    <div class="forcast_temp">
+                        ${Math.round(j.hourly.temperature_2m[idx])}°
+                    </div>
+
+                    <div class="forcast_rain">
+                        💧 ${j.hourly.precipitation_probability[idx]}%
+                    </div>
+
+                </div>`;
+            }
+
+            j.daily.time.forEach((t, i) => { 
+                let w = new Date(t).toLocaleDateString('de-DE', { weekday: 'short' });
+                let x = ico(1, j.daily.weather_code[i]);
+                let q = `svg/${d[0]}${j.current.is_day === 1 ? 'd' : 'n'}.svg`
+                fc.innerHTML += `
+                <div class="day">
+                    <div class="forcast_time">${w}</div>
+                    <div class="wi">
+                        <img src="svg/${x[0]}d.svg" height="48">
+                    </div>
+                    <div class="forcast_temp">${Math.round(j.daily.temperature_2m_max[i])}°/${Math.round(j.daily.temperature_2m_min[i])}°</div>
+                    <div class="forcast_rain">💧 ${j.daily.precipitation_probability_max[i]}%</div>
+                </div>` })
+        }
+        load(); setInterval(load, 600000);
+    </script>
+</body>
+
+</html>
