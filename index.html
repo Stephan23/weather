@@ -18,53 +18,67 @@
         }
 
         .wrap {
-            padding: 40px;
+            padding: 2px;
             height: 100vh;
             display: flex;
             flex-direction: column
         }
-
+        
         .top {
             display: flex;
             justify-content: space-between;
             align-items: flex-start
         }
-
-        #clock {
-            font-size: 56px;
-            font-weight: 600
-        }
-
-        #date_ {
-            font-size: 32px;
-            color: #bbb
-        }
-
-        #city {
-            font-size: 32px;
-            color: #bbb
-        }
-
+        
         .hero {
             display: flex;
             align-items: center;
             gap: 40px;
+        }
+        .hourly{
+            border:1px solid #222;
+            border-radius:16px;
+            display:grid;
+            /* gap:5px; */
+            margin:20px 0 35px;
+        }
+        
+        .forecast {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px
             flex: 1
         }
-
-        #icon {
-            font-size: 150px
+        
+        #clock {
+            font-size: 32px;
+            font-weight: 600
         }
 
+        #date_ {
+            font-size: 28px;
+            color: #e2e2e2
+        }
+
+        #city {
+            font-size: 32px;
+            color: #e2e2e2
+        }
+
+
+        #icon {
+            font-size: 80px
+        }
+        
         #temp {
-            font-size: 170px;
+            font-size: 80px;
             font-weight: 700;
             line-height: .9
         }
 
         #stat_ {
-            font-size: 38px;
-            color: #cfcfcf
+            font-size: 24px;
+            color: #e2e2e2
         }
 
         .info {
@@ -80,11 +94,6 @@
             color: #ddd
         }
 
-        .forecast {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 14px
-        }
 
         .day {
             border: 1px solid #222;
@@ -94,45 +103,38 @@
         }
 
         .wi {
-            font-size: 48px
+            font-size: 32px
         }
 
         .small {
             color: #aaa
         }
-        .hourly{
-            border:1px solid #222;
-            border-radius:16px;
-            display:grid;
-            /* gap:5px; */
-            margin:20px 0 35px;
-        }
 
         .hour{
             /* border:1px solid #222; */
             border-radius:16px;
-            padding:14px;
+            padding:5px;
             text-align:center;
         }
 
         .hour img{
-            height:54px;
-            margin:8px 0;
+            height:23px;
+            margin:5px 0;
         }
 
         .forcast_time{
-            font-size:22px;
-            color:#bbb;
+            font-size:13px;
+            color:#e2e2e2;
         }
 
         .forcast_temp{
-            font-size:22px;
+            font-size:13px;
             font-weight:600;
         }
 
         .forcast_rain{
             color:#8ec8ff;
-            font-size:18px;
+            font-size:13px;
         }
     </style>
 </head>
@@ -145,7 +147,7 @@
             <div id=city></div>
         </div>
         <div class=hero>
-            <img id=icon src="svg/01d.svg" type="image/svg+xml"  height="400"/>
+            <img id=icon src="svg/01d.svg" type="image/svg+xml"  height="200"/>
             <!-- <div id=icon>☀️</div> -->
             <div>
                 <div id=temp>--°</div>
@@ -318,7 +320,7 @@
 
                     <img
                         src="svg/${x[0]}${j.hourly.is_day[idx]?'d':'n'}.svg"
-                        height="48">
+                        height="28">
 
                     <div class="forcast_temp">
                         ${Math.round(j.hourly.temperature_2m[idx])}°
