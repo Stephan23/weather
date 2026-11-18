@@ -21,6 +21,14 @@ Die Wetterdaten stammen von **Open-Meteo**.
 
 ---
 
+## Kalender-Konfiguration
+
+Die Kalenderdaten werden über eine lokale Konfigurationsdatei eingerichtet.
+
+Dazu die Beispieldatei kopieren:
+```bash cp calendar.config.example.php calendar.config.php```
+Anschließend `calendar.config.php` anpassen
+
 # URL-Parameter
 
 Alle Einstellungen können direkt über URL-Parameter vorgenommen werden.
@@ -78,6 +86,9 @@ index.html?dt=6&dt_count=8
 ```
 /
 │
+├── calendar.php
+├── calendar.config.php
+├── config.js
 ├── index.html
 └── svg/
     ├── 01d.svg

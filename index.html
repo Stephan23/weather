@@ -14,77 +14,102 @@
             margin: 0;
             background: #000;
             color: #fff;
-            font-family: Inter, Segoe UI, Arial, sans-serif
+            font-family: Inter, Segoe UI, Arial, sans-serif;
+            font-weight: bold
         }
 
         .wrap {
-            padding: 40px;
+            padding: 2px;
             height: 100vh;
             display: flex;
             flex-direction: column
         }
-
+        
         .top {
             display: flex;
             justify-content: space-between;
             align-items: flex-start
         }
-
-        #clock {
-            font-size: 56px;
-            font-weight: 600
-        }
-
-        #date_ {
-            font-size: 32px;
-            color: #bbb
-        }
-
-        #city {
-            font-size: 32px;
-            color: #bbb
-        }
-
+        
         .hero {
             display: flex;
             align-items: center;
             gap: 40px;
-            flex: 1
         }
+        .hourly{
+            border:1px solid #222;
+            border-radius:16px;
+            display:grid;
+            grid-template-columns: repeat(8, minmax(0, 1fr));
+            column-gap: 4px;
+            row-gap: 10px;
+            padding: 8px 6px;
+            margin:12px 0 22px;
+        }
+        
+        .forecast {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr);
+            gap: 8px;
+            flex: 1;
+            overflow-y: auto;
+            min-height: 0;
+            padding-bottom: 4px;
+        }
+        
+        #clock {
+            font-size: 32px;
+            font-weight: 600
+        }
+
+        #date_ {
+            font-size: 28px;
+            color: #e2e2e2
+        }
+
+        #city {
+            font-size: 32px;
+            color: #e2e2e2
+        }
+
 
         #icon {
-            font-size: 150px
+            font-size: 80px
         }
-
+        
         #temp {
-            font-size: 170px;
+            font-size: 80px;
             font-weight: 700;
             line-height: .9
         }
 
         #stat_ {
-            font-size: 38px;
-            color: #cfcfcf
+            font-size: 24px;
+            color: #e2e2e2
         }
 
         .info {
-            display: flex;
-            gap: 18px;
-            margin-top: 25px
+            display: grid;
+            grid-template-columns: repeat(3, minmax(92px, 1fr));
+            gap: 12px;
+            margin-top: 25px;
+            align-items: stretch;
         }
 
         .box {
             border: 1px solid #222;
             border-radius: 16px;
-            padding: 14px 22px;
-            color: #ddd
+            padding: 10px 14px;
+            color: #ddd;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            text-align: center;
         }
 
-        .forecast {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 14px
-        }
 
         .day {
             border: 1px solid #222;
@@ -94,46 +119,193 @@
         }
 
         .wi {
-            font-size: 48px
+            font-size: 32px
         }
 
         .small {
             color: #aaa
         }
-        .hourly{
-            border:1px solid #222;
-            border-radius:16px;
-            display:grid;
-            /* gap:5px; */
-            margin:20px 0 35px;
-        }
 
         .hour{
-            /* border:1px solid #222; */
-            border-radius:16px;
-            padding:14px;
+            border-radius:10px;
+            padding:6px 2px;
             text-align:center;
+            min-width:0;
         }
 
         .hour img{
-            height:54px;
-            margin:8px 0;
+            height:25px;
+            width:25px;
+            object-fit:contain;
+            margin:4px 0;
         }
 
         .forcast_time{
-            font-size:22px;
-            color:#bbb;
+            font-size:15px;
+            color:#e2e2e2;
+            white-space:nowrap;
         }
 
         .forcast_temp{
-            font-size:22px;
+            font-size:15px;
             font-weight:600;
         }
 
         .forcast_rain{
             color:#8ec8ff;
-            font-size:18px;
+            font-size:14px;
+            white-space:nowrap;
         }
+
+        .hour-wind{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            gap:3px;
+            white-space:nowrap;
+        }
+        .hour-wind img{
+            height:17px;
+            width:17px;
+            margin:0;
+        }
+        .hour-wind .forcast_temp{
+            font-size:13px;
+        }
+
+        /* Tageskachel: Wetterdaten in einer Zeile, Termine darunter über die volle Breite. */
+        .day {
+            display: grid;
+            grid-template-columns: 76px 58px 105px 145px minmax(0, 1fr);
+            align-items: center;
+            gap: 10px;
+            min-width: 0;
+            border: 1px solid #222;
+            border-radius: 12px;
+            padding: 12px 14px;
+            text-align: center;
+        }
+
+        .day .forcast_time {
+            font-size: 17px;
+            font-weight: 600;
+        }
+
+        .day .wi img {
+            height: 42px;
+            width: 42px;
+            object-fit: contain;
+        }
+
+        .day .forcast_temp,
+        .day .forcast_rain {
+            font-size: 14px;
+        }
+
+        .day > div:nth-child(5) {
+            grid-column: 5;
+            grid-row: 1;
+            margin: 0 !important;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        .day > div:nth-child(5) img {
+            height: 38px;
+            width: auto;
+        }
+
+        .sm-day-events {
+            grid-column: 1 / -1;
+            width: 100%;
+            min-width: 0;
+            margin: 4px 0 0;
+            padding: 10px 0 0;
+            border-left: 0;
+            border-top: 1px solid #333;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            text-align: left;
+        }
+
+        .sm-day-event {
+            width: 100%;
+            min-width: 0;
+            display: grid;
+            grid-template-columns: 105px minmax(0, 1fr) minmax(130px, 22%);
+            align-items: baseline;
+            column-gap: 12px;
+            border-left: 3px solid #8ec8ff;
+            padding: 4px 10px;
+            text-align: left;
+            background: rgba(255,255,255,0.025);
+            border-radius: 0 6px 6px 0;
+        }
+
+        .sm-day-event-time {
+            color: #8ec8ff;
+            font-size: 15px;
+            line-height: 1.3;
+            white-space: nowrap;
+        }
+
+        .sm-day-event-title {
+            color: #fff;
+            font-size: 15px;
+            line-height: 1.3;
+            overflow-wrap: break-word;
+            word-break: normal;
+            min-width: 0;
+        }
+
+        .sm-day-event-calendar {
+            color: #999;
+            font-size: 15px;
+            line-height: 1.3;
+            overflow-wrap: anywhere;
+            text-align: right;
+        }
+
+        .sm-day-no-events {
+            color: #666;
+            font-size: 15px;
+            text-align: left;
+            padding: 2px 4px;
+        }
+
+        @media (max-width: 700px) {
+            .info {
+                grid-template-columns: repeat(3, minmax(70px, 1fr));
+                gap: 6px;
+            }
+            .box { padding: 8px 6px; }
+            .day {
+                grid-template-columns: 54px 40px 78px minmax(65px, 1fr);
+                gap: 6px;
+                padding: 8px;
+            }
+            .day > div:nth-child(5) {
+                grid-column: 1 / -1;
+                grid-row: auto;
+                justify-content: center;
+            }
+            .day .forcast_time { font-size: 14px; }
+            .day .wi img { height: 34px; width: 34px; }
+            .day .forcast_temp, .day .forcast_rain { font-size: 12px; }
+            .sm-day-event {
+                grid-template-columns: 78px minmax(0, 1fr);
+                row-gap: 2px;
+            }
+            .sm-day-event-calendar {
+                grid-column: 2;
+                text-align: left;
+            }
+        }
+
     </style>
 </head>
 
@@ -145,7 +317,7 @@
             <div id=city></div>
         </div>
         <div class=hero>
-            <img id=icon src="svg/01d.svg" type="image/svg+xml"  height="400"/>
+            <img id=icon src="svg/01d.svg" type="image/svg+xml"  height="200"/>
             <!-- <div id=icon>☀️</div> -->
             <div>
                 <div id=temp>--°</div>
@@ -168,13 +340,27 @@
         </div>
         <div id="hourly" class="hourly"></div>
         <div class="forecast" id="fc"></div>
+
     </div>
+    <script src="config.js"></script>
     <script>
+        const appConfig = window.SMART_MIRROR_CONFIG || {};
+
+        const calendarNames = appConfig.calendars?.names || {};
+        const calendarColors = appConfig.calendars?.colors || {};
+
+        setTimeout(() => location.reload(), 30 * 60 * 1000);
+
         const q = new URLSearchParams(location.search);
         const lat = q.get('lat') || 51.06, lon = q.get('lon') || 6.10, city = q.get('city') || 'Heinsberg';
+        const waste_no = q.get('waste_no') || 39, waste_street = q.get('waste_street') || 'Ohler+Kirchweg' 
         const dt = parseInt(q.get('dt') || 3);
         const dtCount = parseInt(q.get('dt_count') || 8);
         cityEl = document.getElementById('city'); cityEl.textContent = city;
+
+        let waste = {};
+
+        let calendarEventsData = [];
         const map = { 1: {
             0: ["01", "Sonnig"],
             1: ["02", "Überwiegend sonnig"],
@@ -231,15 +417,52 @@
             99: ["11", "Schweres Gewitter"]} };
         function ico(r, c) { return map[r][c] || ["01", "Unbekannt"] }
         function tick() { 
-            date_.textContent = new Date().toLocaleDateString('de-DE', { weekday: "long",
-  year: "numeric",
-  month: "long",
-  day: "numeric", });
+            date_.textContent = new Date().toLocaleDateString('de-DE', 
+            { 
+                weekday: "long",
+                year: "numeric",
+                month: "long",
+                day: "numeric" });
             clock.textContent = new Date().toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' }); 
         }
-        setInterval(tick, 1000); tick();
-        async function load() {
-            let url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,weather_code,wind_speed_10m,relative_humidity_2m,is_day&hourly=temperature_2m,weather_code,precipitation_probability,is_day&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&forecast_hours=${dt*dtCount}&timezone=auto`.replace(/\s+/g,'');
+        setInterval(tick, 1000); 
+        tick();
+        async function loadWaste() {
+            let now = new Date();
+
+            let url =
+                `https://mags.de/proxy/proxy_dates.php` +
+                `?building_number=${waste_no}` +
+                `&building_number_addition=` +
+                `&street_name=${waste_street}` +
+                `&start_year=${now.getFullYear()}` +
+                `&end_year=${now.getFullYear()}` +
+                `&start_month=${now.getMonth()+1}` +
+                `&end_month=${now.getMonth()+1}` +
+                `&turnus=2`;
+
+            let j = await (await fetch(url)).json();
+
+            waste = {};
+
+            j.data.forEach(t => {
+
+                let key =
+                    `${t.year}-` +
+                    `${String(t.month).padStart(2,"0")}-` +
+                    `${String(t.day).padStart(2,"0")}`;
+
+                if(!waste[key])
+                    waste[key]=[];
+
+                waste[key].push(t.type);
+
+            });
+
+        }
+
+        async function loadWether() {
+            let url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,rain,weather_code,wind_speed_10m,relative_humidity_2m,is_day&hourly=temperature_2m,rain,weather_code,wind_speed_10m,precipitation_probability,is_day&daily=weather_code,wind_speed_10m_max,temperature_2m_max,rain_sum,temperature_2m_min,precipitation_probability_max&forecast_hours=${dt*dtCount}&timezone=auto`.replace(/\s+/g,'');
             let j = await (await fetch(url)).json();
             let d = ico(j.current.is_day, j.current.weather_code);
             let p = `svg/${d[0]}${j.current.is_day == 1 ? 'd' : 'n'}.svg`
@@ -248,10 +471,12 @@
             temp.textContent = Math.round(j.current.temperature_2m) + "°";
             hum.innerHTML = j.current.relative_humidity_2m + " %";
             wind.innerHTML = Math.round(j.current.wind_speed_10m) + " km/h";
-            rain.innerHTML = j.daily.precipitation_probability_max[0] + " %";
+            rain.textContent =
+                `${j.daily.precipitation_probability_max[0]} % · ${Number(j.current.rain || 0).toLocaleString("de-DE", { minimumFractionDigits: 1, maximumFractionDigits: 1 })} mm`;
             fc.innerHTML = "";
 
-            hourly.style.gridTemplateColumns=`repeat(${dtCount},1fr)`;
+            // Maximal 8 Stunden pro Zeile; weitere Stunden laufen in die nächste Zeile.
+            hourly.style.gridTemplateColumns=`repeat(${Math.min(8, dtCount)}, minmax(0, 1fr))`;
 
             hourly.innerHTML="";
 
@@ -278,14 +503,20 @@
 
                     <img
                         src="svg/${x[0]}${j.hourly.is_day[idx]?'d':'n'}.svg"
-                        height="48">
+                        height="28">
 
                     <div class="forcast_temp">
                         ${Math.round(j.hourly.temperature_2m[idx])}°
                     </div>
-
+                    <div class="hour-wind">
+                        <img src="svg/wind.svg" type="image/svg+xml" height="17"/>
+                        <div class="forcast_temp">${Math.round(j.hourly.wind_speed_10m[idx])} km/h</div>
+                    </div>
                     <div class="forcast_rain">
                         💧 ${j.hourly.precipitation_probability[idx]}%
+                    </div>
+                    <div class="forcast_rain">
+                        ${Number(j.hourly.rain[idx] || 0).toLocaleString("de-DE", { minimumFractionDigits: 1, maximumFractionDigits: 1 })} mm
                     </div>
 
                 </div>`;
@@ -295,17 +526,152 @@
                 let w = new Date(t).toLocaleDateString('de-DE', { weekday: 'short' });
                 let x = ico(1, j.daily.weather_code[i]);
                 let q = `svg/${d[0]}${j.current.is_day === 1 ? 'd' : 'n'}.svg`
+
+                let key=t;
+
+                let bins="";
+
+                if(waste[key]){
+
+                    bins=waste[key]
+                        .map(c=>`<img src="svg/bin_${c}.svg" height="48">`)
+                        .join("");
+                }
+
                 fc.innerHTML += `
-                <div class="day">
+                <div class="day" data-date="${key}">
                     <div class="forcast_time">${w}</div>
                     <div class="wi">
                         <img src="svg/${x[0]}d.svg" height="48">
                     </div>
                     <div class="forcast_temp">${Math.round(j.daily.temperature_2m_max[i])}°/${Math.round(j.daily.temperature_2m_min[i])}°</div>
-                    <div class="forcast_rain">💧 ${j.daily.precipitation_probability_max[i]}%</div>
+                    <div style="display: flex; align-items: center; gap: 6px;">
+                        <img src="svg/wind.svg" type="image/svg+xml"  height="23"/>
+                        <div class="forcast_temp">${j.daily.wind_speed_10m_max[i]} km/h</div>
+                    </div>
+                    <div class="forcast_rain">
+                        💧 ${j.daily.precipitation_probability_max[i]}% · ${Number(j.daily.rain_sum[i] || 0).toLocaleString("de-DE", { minimumFractionDigits: 1, maximumFractionDigits: 1 })} mm
+                    </div>
+
+                    <div style="font-size:28px;margin-top:10px">
+                        ${bins}
+                    </div>
                 </div>` })
+            renderCalendarEventsIntoForecast();
         }
-        load(); setInterval(load, 600000);
+        
+        async function loadCalendar(){
+
+            let events = await (await fetch("calendar.php")).json();
+
+            console.log(events);
+
+        }
+
+        async function refresh() {
+            await loadCalendar();
+            await loadWaste();
+            await loadWether();
+        }
+        
+        refresh();
+        setInterval(async() =>
+        refresh, 6000);
+
+        // Termine dem passenden Wettertag zuordnen.
+        function renderCalendarEventsIntoForecast() {
+            document.querySelectorAll("#fc .day").forEach(dayCard => {
+                const dayKey = dayCard.dataset.date;
+                const dayEvents = calendarEventsData
+                    .filter(event => String(event.start || "").slice(0, 10) === dayKey)
+                    .sort((a, b) => {
+                        const aTime = Number.isFinite(Number(a.timestamp))
+                            ? Number(a.timestamp)
+                            : new Date(String(a.start).replace(" ", "T")).getTime() / 1000;
+                        const bTime = Number.isFinite(Number(b.timestamp))
+                            ? Number(b.timestamp)
+                            : new Date(String(b.start).replace(" ", "T")).getTime() / 1000;
+                        return aTime - bTime;
+                    });
+
+                const eventList = document.createElement("div");
+                eventList.className = "sm-day-events";
+
+                if (dayEvents.length === 0) {
+                    const empty = document.createElement("div");
+                    empty.className = "sm-day-no-events";
+                    empty.textContent = "Keine Termine";
+                    eventList.appendChild(empty);
+                } else {
+                    dayEvents.forEach(event => {
+    const item = document.createElement("div");
+    item.className = "sm-day-event";
+
+    const color = calendarColors[event.calendar] || "#8ec8ff";
+    item.style.borderLeftColor = color;
+
+    const time = document.createElement("div");
+    time.className = "sm-day-event-time";
+    time.style.color = color;
+
+    const eventDate = new Date(String(event.start).replace(" ", "T"));
+    time.textContent = event.allDay
+        ? "Ganztägig"
+        : (isNaN(eventDate.getTime())
+            ? ""
+            : eventDate.toLocaleTimeString("de-DE", {
+                hour: "2-digit",
+                minute: "2-digit"
+            }) + " Uhr");
+
+    const title = document.createElement("div");
+    title.className = "sm-day-event-title";
+    title.textContent = event.title || "(Ohne Titel)";
+
+    item.appendChild(time);
+    item.appendChild(title);
+
+    const calendar = document.createElement("div");
+    calendar.className = "sm-day-event-calendar";
+    calendar.textContent = "Kalender: " + (calendarNames[event.calendar] || "Unbekannt");
+    calendar.style.color = color;
+
+    item.appendChild(calendar);
+
+    eventList.appendChild(item);
+});
+                }
+
+                const oldList = dayCard.querySelector(".sm-day-events");
+                if (oldList) oldList.remove();
+                dayCard.appendChild(eventList);
+            });
+        }
+
+        // Kalenderdaten laden und in die passenden Tageskacheln einsetzen.
+        async function loadCalendarDisplay() {
+            try {
+                const response = await fetch("calendar.php", { cache: "no-store" });
+                if (!response.ok) {
+                    throw new Error("HTTP " + response.status);
+                }
+
+                const events = await response.json();
+                if (!Array.isArray(events)) {
+                    throw new Error(events.error || "Ungültige Kalenderantwort");
+                }
+
+                calendarEventsData = events;
+                renderCalendarEventsIntoForecast();
+            } catch (error) {
+                console.error("Kalenderanzeige:", error);
+            }
+        }
+
+        // Erster Aufruf sowie Aktualisierung alle 5 Minuten.
+        loadCalendarDisplay();
+        setInterval(loadCalendarDisplay, 5 * 60 * 1000);
+
     </script>
 </body>
 
