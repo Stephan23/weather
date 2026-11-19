@@ -37,7 +37,7 @@
             gap: 40px;
         }
         .hourly{
-            border:1px solid #222;
+            border:3px solid #a7a6a6;
             border-radius:16px;
             display:grid;
             grid-template-columns: repeat(8, minmax(0, 1fr));
@@ -46,7 +46,7 @@
             padding: 8px 6px;
             margin:12px 0 22px;
         }
-        
+
         .forecast {
             display: grid;
             grid-template-columns: minmax(0, 1fr);
@@ -56,7 +56,7 @@
             min-height: 0;
             padding-bottom: 4px;
         }
-        
+
         #clock {
             font-size: 32px;
             font-weight: 600
@@ -76,7 +76,7 @@
         #icon {
             font-size: 80px
         }
-        
+
         #temp {
             font-size: 80px;
             font-weight: 700;
@@ -97,7 +97,7 @@
         }
 
         .box {
-            border: 1px solid #222;
+            border: 3px solid #a7a6a6;
             border-radius: 16px;
             padding: 10px 14px;
             color: #ddd;
@@ -112,7 +112,7 @@
 
 
         .day {
-            border: 1px solid #222;
+            border: 3px solid #a7a6a6;
             border-radius: 16px;
             padding: 16px;
             text-align: center
@@ -176,11 +176,11 @@
         /* Tageskachel: Wetterdaten in einer Zeile, Termine darunter über die volle Breite. */
         .day {
             display: grid;
-            grid-template-columns: 76px 58px 105px 145px minmax(0, 1fr);
+            grid-template-columns: 76px 58px 105px 145px 145px minmax(0, 1fr);
             align-items: center;
             gap: 10px;
             min-width: 0;
-            border: 1px solid #222;
+            border: 3px solid #a7a6a6;
             border-radius: 12px;
             padding: 12px 14px;
             text-align: center;
@@ -353,7 +353,7 @@
 
         const q = new URLSearchParams(location.search);
         const lat = q.get('lat') || 51.06, lon = q.get('lon') || 6.10, city = q.get('city') || 'Heinsberg';
-        const waste_no = q.get('waste_no') || 39, waste_street = q.get('waste_street') || 'Ohler+Kirchweg' 
+        const waste_no = q.get('waste_no') || 39, waste_street = q.get('waste_street') || 'Ohler+Kirchweg'
         const dt = parseInt(q.get('dt') || 3);
         const dtCount = parseInt(q.get('dt_count') || 8);
         cityEl = document.getElementById('city'); cityEl.textContent = city;
@@ -416,16 +416,16 @@
             96: ["11", "Gewitter+Hagel"],
             99: ["11", "Schweres Gewitter"]} };
         function ico(r, c) { return map[r][c] || ["01", "Unbekannt"] }
-        function tick() { 
-            date_.textContent = new Date().toLocaleDateString('de-DE', 
-            { 
+        function tick() {
+            date_.textContent = new Date().toLocaleDateString('de-DE',
+            {
                 weekday: "long",
                 year: "numeric",
                 month: "long",
                 day: "numeric" });
-            clock.textContent = new Date().toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' }); 
+            clock.textContent = new Date().toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' });
         }
-        setInterval(tick, 1000); 
+        setInterval(tick, 1000);
         tick();
         async function loadWaste() {
             let now = new Date();
@@ -522,7 +522,7 @@
                 </div>`;
             }
 
-            j.daily.time.forEach((t, i) => { 
+            j.daily.time.forEach((t, i) => {
                 let w = new Date(t).toLocaleDateString('de-DE', { weekday: 'short' });
                 let x = ico(1, j.daily.weather_code[i]);
                 let q = `svg/${d[0]}${j.current.is_day === 1 ? 'd' : 'n'}.svg`
@@ -534,7 +534,7 @@
                 if(waste[key]){
 
                     bins=waste[key]
-                        .map(c=>`<img src="svg/bin_${c}.svg" height="48">`)
+                        .map(c=>`<img src="svg/bin_${c}.svg" height="48"><div class="forcast_time" data-date="${key}">${c}</div>`)
                         .join("");
                 }
 
@@ -553,7 +553,7 @@
                         💧 ${j.daily.precipitation_probability_max[i]}% · ${Number(j.daily.rain_sum[i] || 0).toLocaleString("de-DE", { minimumFractionDigits: 1, maximumFractionDigits: 1 })} mm
                     </div>
 
-                    <div style="font-size:28px;margin-top:10px">
+                    <div style="display: flex; align-items: center; gap: 6px;">
                         ${bins}
                     </div>
                 </div>` })
